@@ -9,13 +9,13 @@ def main():
         parts = command.split()
         if command == "exit":
             break
-        elif command.startswith("echo"):
+        elif parts[0] == "echo":
             print(command[5:])
         elif parts[0] == "type":
             if parts[1] in builtins:
                 print(f"{parts[1]} is a shell builtin")
             else:
-                print(f"{parts[0]}: not found")
+                print(f"{parts[1]}: not found")
         else:
             print(f"{command}: command not found")
         
